@@ -33,18 +33,21 @@
                     <!--users show-->
 
                     <div class="row beer-container text-left">
-                        <div class="col-md-12 beer" ng-repeat="beer in beersList ">
-                                <div class="col-md-5 beer-section">
+                        <div class="col-md-12 col-xs-4 beer" ng-repeat="beer in beersList">
+
+                                <div class="col-md-4 col-xs-4 beer-section">
                                     <img ng-src="{{beer.image}}">
                                 </div>  
-                                <div class="col-md-6 beer-section">
+
+                                <div class="col-md-8 col-xs-4 beer-section">
                                     <h4><em>{{beer.name}}</em></h4>
                                     <p><b>style:</b> {{beer.style}}<br>
                                        <b>abv:</b> {{beer.abv}}%</p><br>
+                                </div> 
+                                <div class="text-right">       
                                     <button type="button" ng-click="removeFromList($index)"><i class="fa fa-trash" aria-hidden="true"></i>
-                                        </button>
-
-                                </div>  
+                                    </button>
+                               </div>  
                         </div>
                     </div> 
 
