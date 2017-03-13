@@ -34,14 +34,16 @@ img{
 input{  margin-top: 5px;
 }
 
+.fa {color:red}
+
 .abv{width:80px;}
 .main{overflow: hidden;}
 
 .beer-container{
-  background-color: #bb5fb6;
+  background-color: rgba(205, 168, 113, 0.5); /*#CDA871;*/
   height: 330px;
   padding-top: 50px;
   margin-top: 450px;
-     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 
 }
