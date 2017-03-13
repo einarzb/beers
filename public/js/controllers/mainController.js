@@ -25,7 +25,7 @@ app.controller('mainController', function($scope, beerService) {
         $scope.rate  = "";
 
     } else {
-        alert("please fill in the fields")};  
+        alert("please fill in the required fields")};  
   };
 
 //removing beers from array

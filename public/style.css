@@ -1,4 +1,4 @@
-h1,h3{color: #fff;}
+h1,h3{color: #f6d121;}
 
 img{
   height:150px;
@@ -16,7 +16,7 @@ img{
 }
 
 .container-fluid{
-  background: url(images/cover.jpg) no-repeat center center fixed; 
+  background: url(images/cover2.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -26,6 +26,9 @@ img{
 
 .form{width: 300px;
   right: 300px;
+  background-color: rgba(187, 95, 182, 0.8);
+   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+   /*#bb5fb6*/
 }
 
 input{  margin-top: 5px;
@@ -35,8 +38,10 @@ input{  margin-top: 5px;
 .main{overflow: hidden;}
 
 .beer-container{
-  background-color: #000;
+  background-color: #bb5fb6;
   height: 330px;
   padding-top: 50px;
   margin-top: 450px;
+     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+
 }
