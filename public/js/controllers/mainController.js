@@ -1,9 +1,10 @@
-app.controller('mainController', function($scope, beerService) {
+app.controller('mainController', function($scope, $filter, beerService) {
 
   $scope.name;
   $scope.style;
   $scope.abv;
   $scope.image;
+  $scope.rate;
 
   //dynamic array
   $scope.beersList = beerService.beersList;

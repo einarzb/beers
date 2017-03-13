@@ -21,14 +21,11 @@ app.factory('beerService', function($http, $rootScope){
 
   beerFactory.addToList = function(newBeer){
      console.log('from the service')
-     console.log(newBeer);
-     hardList.push(newBeer);
-     console.log(hardList);
+     beerFactory.beersList.push(newBeer);
   };
 
   beerFactory.removeFromList = function (index) {
-    hardList.splice(index, 1); 
-    console.log(index); 
+    beerFactory.beersList.splice(index, 1); //removes from view
   };
   
   return beerFactory;
