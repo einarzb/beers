@@ -27,6 +27,10 @@ img{
   right: 300px;
 }
 
+input{  margin-top: 5px;
+}
+
+.abv{width:80px;}
 .main{overflow: hidden;}
 
 .beer-container{

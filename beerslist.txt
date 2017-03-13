@@ -1,3 +1,5 @@
-db.beers.save({"name" : "Kasteel rouge", "style" : "fruity", "image" : "https://goo.gl/KOmnym", "abv" : 8 })
+db.beers.save({"name" : "Kasteel Rouge", "style" : "fruity", "image" : "https://goo.gl/KOmnym", "abv" : 8 })
 
-db.beers.save({"name" : "maccabi-light", "style" : "white", "image" : "http://bit.ly/1XtmB4d", "abv" : 6 })
+db.beers.save({"name" : "Beer Lao", "style" : "lager", "image" : "https://goo.gl/T4Mlzw", "abv" : 6.5 })
+
+db.beers.save({"name" : "Chang Beer", "style" : "pale lager", "image" : "https://goo.gl/iSYRaC", "abv" : 5 })
