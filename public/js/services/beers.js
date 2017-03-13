@@ -11,7 +11,6 @@ app.factory('beerService', function($http, $rootScope){
     console.log(beerFactory.beersList);  
     //copies the data that was received into our beers array
     angular.copy(response.data, beerFactory.beersList); 
-   // beerFactory.beersList.push({});
     }, 
    //if error
     function(err){ 
@@ -29,6 +28,5 @@ app.factory('beerService', function($http, $rootScope){
   };
   
   return beerFactory;
-
 
 });

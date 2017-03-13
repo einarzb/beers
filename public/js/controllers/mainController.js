@@ -21,12 +21,13 @@ app.controller('mainController', function($scope, beerService) {
       $scope.image = "";
       $scope.rate  = "";
   };
-  
+
 //removing beers from array
   $scope.removeFromList = function(index){
       beerService.removeFromList(index);
   };  
 
-    beerService.getBeers()
+//invoking 
+    beerService.getBeers();
 
 });
