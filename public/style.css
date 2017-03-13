@@ -1,0 +1,37 @@
+h1,h3{color: #fff;}
+
+img{
+  height:150px;
+  max-width: 100px;
+  padding-right: 20px;
+  margin-top: 10px;
+}
+.beer{
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  margin-left: 15px;
+  height:200px;
+  background-color: #fff;
+  width: 250px;
+}
+
+.container-fluid{
+  background: url(images/cover.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 60%;
+}
+
+.form{width: 300px;
+  right: 300px;
+}
+
+.main{overflow: hidden;}
+
+.beer-container{
+  background-color: #000;
+  height: 330px;
+  padding-top: 20px;
+  margin-top: 450px;
+}
