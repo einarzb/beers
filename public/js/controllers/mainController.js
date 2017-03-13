@@ -4,7 +4,7 @@ app.controller('mainController', function($scope, beerService) {
   $scope.name;
   $scope.style;
   $scope.abv;
-  $scope.image;
+  $scope.image = "https://s-media-cache-ak0.pinimg.com/736x/49/1a/f0/491af06b6e11eb0ce4cde23626deb480.jpg";
   $scope.rate;
 
 //beer array
@@ -12,14 +12,20 @@ app.controller('mainController', function($scope, beerService) {
 
 //adding beers to array
   $scope.addBeer = function(newBeer) {
-    var newBeer = {name: $scope.name, style:$scope.style, abv:$scope.abv, image: $scope.image}; //creats an object
-    beerService.addToList(newBeer); //invoke service function and pass the object
 
-      $scope.name = "";
-      $scope.style = "";
-      $scope.abv = "";
-      $scope.image = "";
-      $scope.rate  = "";
+    if($scope.name && $scope.style && $scope.abv > 0){
+
+        var newBeer = {name: $scope.name, style:$scope.style, abv:$scope.abv, image: $scope.image}; //creats an object
+        beerService.addToList(newBeer); //invoke service function and pass the object
+
+        $scope.name = "";
+        $scope.style = "";
+        $scope.abv = "";
+        $scope.image = "";
+        $scope.rate  = "";
+
+    } else {
+        alert("please fill in the fields")};  
   };
 
 //removing beers from array
