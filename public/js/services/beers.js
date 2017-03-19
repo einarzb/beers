@@ -35,10 +35,10 @@ app.factory('beerFactory', function($http, $rootScope){
   };
 
   beerFactory.removeFromList = function (id) {
-    return $http.delete('/beers/' + id, {params:{_id: req.params.id}}).then(function(response){
+    return $http.delete('/beers/' + id).then(function(response){
         console.log("Im response of removeFromList");
 
-        //client - update the view. this happens in then. fancy callback func
+        //client - invoke getbeers that update the view
         beerFactory.getBeers(); 
        },
          function(err){

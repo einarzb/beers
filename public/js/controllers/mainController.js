@@ -28,10 +28,8 @@ app.controller('mainController', function($scope, beerFactory) {
         alert("please fill in the required fields")};  
   };
 
-//removing beers from array
-  $scope.removeFromList = function(index){
-      beerFactory.removeFromList(index);
-  };  
+//invoke service function to remove beers from array client and DB wise
+$scope.removeFromList = beerFactory.removeFromList;
 
 //invoking 
     beerFactory.getBeers();

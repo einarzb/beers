@@ -1,3 +1,4 @@
+
 db.beers.save({"name" : "Kasteel Rouge", "style" : "fruity", "image" : "https://goo.gl/KOmnym", "abv" : 8, "rate" : 4})
 
 db.beers.save({"name" : "Beer Lao", "style" : "lager", "image" : "https://goo.gl/T4Mlzw", "abv" : 6.5, "rate" : 2})
