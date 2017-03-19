@@ -46,6 +46,18 @@ app.factory('beerFactory', function($http, $rootScope){
         });  
   };
   
+  beerFactory.editItem = function(id){
+    return $http.put('/beers/' + id, id).then(function(response){
+      console.log("Im response of editItem");
+
+    //client - invoke getbeers that update the view
+        beerFactory.getBeers(); 
+      },
+        function(err){
+          console.error(err);
+    });  
+  };
+
   return beerFactory;
 
 });

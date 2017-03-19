@@ -31,6 +31,9 @@ app.controller('mainController', function($scope, beerFactory) {
 //invoke service function to remove beers from array client and DB wise
 $scope.removeFromList = beerFactory.removeFromList;
 
+//invoke service function to edit beers
+$scope.editItem = beerFactory.editItem;
+
 //invoking 
     beerFactory.getBeers();
 
