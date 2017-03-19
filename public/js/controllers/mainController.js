@@ -1,4 +1,4 @@
-app.controller('mainController', function($scope, beerService) {
+app.controller('mainController', function($scope, beerFactory) {
 
 //users input
   $scope.name;
@@ -8,7 +8,7 @@ app.controller('mainController', function($scope, beerService) {
   $scope.rate;
 
 //beer array
-  $scope.beersList = beerService.beersList;
+  $scope.beers = beerFactory.beers;
 
 //adding beers to array
   $scope.addBeer = function(newBeer) {
@@ -16,7 +16,7 @@ app.controller('mainController', function($scope, beerService) {
     if($scope.name && $scope.style && $scope.abv > 0){
 
         var newBeer = {name: $scope.name, style:$scope.style, abv:$scope.abv, image: $scope.image, rate: $scope.rate}; //creats an object
-        beerService.addToList(newBeer); //invoke service function and pass the object
+        beerFactory.addToList(newBeer); //invoke service function and pass the object
 
         $scope.name = "";
         $scope.style = "";
@@ -30,10 +30,10 @@ app.controller('mainController', function($scope, beerService) {
 
 //removing beers from array
   $scope.removeFromList = function(index){
-      beerService.removeFromList(index);
+      beerFactory.removeFromList(index);
   };  
 
 //invoking 
-    beerService.getBeers();
+    beerFactory.getBeers();
 
 });

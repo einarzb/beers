@@ -33,9 +33,8 @@ app.get('/beers', function (req, res, next) {
 });
 
 //adding beers
-
 app.post('/beers', function (req, res, next) {
-    var beer = new Beer(req.body); //created a new Beer instance using the hard coded data on req.body
+    var beer = new Beer(); //created a new Beer instance using the hard coded data on req.body
 
     beer.save(function(err,beer){ //saving the beer object
       if (err) {
@@ -62,9 +61,6 @@ app.post('/beers', function(req, res, next) {
 
 //delete
 app.delete('/beers/:id', function(req, res, next){ //id is placeholder for 58c529809b1b69d3cdcf1940
-  // var id = req.params.id;
-  // console.log(id);
-  // res.send("delete route");
   Beer.remove({_id: req.params.id},function(err){
     if(err){
       console.error(err);
@@ -87,6 +83,7 @@ app.put('/beers/:id', function(req, res, next){
   });
 });
 
+//404 error
 app.use(function(req, res, next){
   var err = new Error('Not found');
   err.status = 404;

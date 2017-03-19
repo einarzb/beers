@@ -1,16 +1,18 @@
-app.factory('beerService', function($http, $rootScope){
-        
-  var beerFactory = {beersList: []}; 
-  
+app.factory('beerFactory', function($http, $rootScope){
+//holds all data and methods that change the data should be in a factory.  
+
+  var beerFactory = {beers: []}; 
+  //The beer array and all the factory functionality returned inside an object.
+
   //fetching all beers from server API
 
   beerFactory.getBeers = function(){
     return $http.get('/beers')//returns promise
     //if success
     .then(function(response){ 
-    console.log(beerFactory.beersList);  
+    console.log(beerFactory.beers);  
     //copies the data that was received into our beers array
-    angular.copy(response.data, beerFactory.beersList); 
+    angular.copy(response.data, beerFactory.beers); 
     }, 
    //if error
     function(err){ 
@@ -19,12 +21,12 @@ app.factory('beerService', function($http, $rootScope){
   }; 
 
   beerFactory.addToList = function(newBeer){
-    return $http.post('/beers').then(function(response){
+    return $http.post('/beers', newBeer).then(function(response){
          console.log("Im response of addToList");
 
          //client
          console.log('from the service')
-         beerFactory.beersList.push(newBeer);
+         beerFactory.beers.push(newBeer);
         },
 
         function(err){
@@ -32,9 +34,16 @@ app.factory('beerService', function($http, $rootScope){
         });    
   };
 
-  beerFactory.removeFromList = function (index) {
-    //client
-    beerFactory.beersList.splice(index, 1); //removes from view
+  beerFactory.removeFromList = function (id) {
+    return $http.delete('/beers/' + id, {params:{_id: req.params.id}}).then(function(response){
+        console.log("Im response of removeFromList");
+
+        //client - update the view. this happens in then. fancy callback func
+        beerFactory.getBeers(); 
+       },
+         function(err){
+          console.error(err);
+        });  
   };
   
   return beerFactory;
