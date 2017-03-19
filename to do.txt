@@ -9,3 +9,5 @@ to do:
 6. if / else theres missing image than pass the default image
 
 7. fix filter..
+
+8. my edit/delete doesn't work on new added beers! up until I refresh
