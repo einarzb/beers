@@ -42,7 +42,7 @@ app.post('/beers', function (req, res, next) {
         console.error(err)
         return next(err); //middleware
       }else{
-        res.json(beer); //return the json obj to CLIENT
+        res.send(beer);
       }
     }); 
 });

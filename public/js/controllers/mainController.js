@@ -15,7 +15,7 @@ app.controller('mainController', function($scope, beerService) {
 
     if($scope.name && $scope.style && $scope.abv > 0){
 
-        var newBeer = {name: $scope.name, style:$scope.style, abv:$scope.abv, image: $scope.image}; //creats an object
+        var newBeer = {name: $scope.name, style:$scope.style, abv:$scope.abv, image: $scope.image, rate: $scope.rate}; //creats an object
         beerService.addToList(newBeer); //invoke service function and pass the object
 
         $scope.name = "";

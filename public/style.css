@@ -5,11 +5,11 @@ img{
   max-width: 120px;
   padding-right: 10px;
   margin-top: 10px;
-
 }
 .beer{
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
   margin-left: 15px;
+  margin-bottom: 10px;
   height:180px;
   background-color: #fff;
   width: 250px;
@@ -41,9 +41,9 @@ input{  margin-top: 5px;
 
 .beer-container{
   background-color: rgba(205, 168, 113, 0.5); /*#CDA871;*/
-  height: 330px;
-  padding-top: 50px;
-  margin-top: 450px;
+  height:  100%;
+  padding-top: 30px;
+  margin-top: 470px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 
 }
