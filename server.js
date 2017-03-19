@@ -20,7 +20,6 @@ app.get('/', function(req, res, next){
 
 //connectong DB to route
 app.get('/beers', function (req, res, next) {
-
     Beer.find(function (error, beers) { //beers is db name
           if (error) {
             console.error(error)
@@ -34,7 +33,7 @@ app.get('/beers', function (req, res, next) {
 
 //adding beers
 app.post('/beers', function (req, res, next) {
-    var beer = new Beer(); //created a new Beer instance using the hard coded data on req.body
+    var beer = new Beer(req.body); //created a new Beer instance using the hard coded data on req.body
 
     beer.save(function(err,beer){ //saving the beer object
       if (err) {
@@ -73,7 +72,7 @@ app.delete('/beers/:id', function(req, res, next){ //id is placeholder for 58c52
 
 //update 
 app.put('/beers/:id', function(req, res, next){
-  Beer.findOneAndUpdate({_id: req.params.id}, req.body, {new:true}).exec(function(beer, err){ //pass 3 things: id, req.body, boolean and func
+  Beer.findOneAndUpdate({_id: req.params.id}, req.body, {new:true}).exec(function( err, beer){ //pass 3 things: id, req.body, boolean and func
      if(err){
       console.error(err);
       return next (err);

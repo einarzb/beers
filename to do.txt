@@ -1,0 +1,11 @@
+to do:
+
+1. ng-hide/show for input fields
+2. scope them in the ctrl
+3. get new edited object
+4. pass object to put
+5. in the service's put - create an if else to check if an input was changed so update it
+
+6. if / else theres missing image than pass the default image
+
+7. fix filter..
