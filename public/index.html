@@ -38,7 +38,7 @@
                                 <div class="col-md-8 col-xs-4 beer-section">
 
                                     <h4 ng-hide="editable"><em>{{beer.name}}</em></h4>
-                                        <p ng-hide="editable">
+                                    <p ng-hide="editable">
                                            <b>style:</b> {{beer.style}} <br>
                                            <b>abv:</b> {{beer.abv}}% <br>
                                            <b>rating:</b> {{beer.rate[0]}}
@@ -64,7 +64,7 @@
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     </button>
 
-                                    <button type="button" ng-show="editable" ng-click="editedBeer(beer._id, updatedBeer)">
+                                    <button type="button" ng-show="editable" ng-click="saveBeer(beer._id, updatedBeer)">
                                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
                                     </button>
                                </div>  

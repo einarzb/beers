@@ -3,9 +3,11 @@ app.factory('beerFactory', function($http, $rootScope){
 
   var beerFactory = {beers: []}; 
   //when ill refactor it ll be an empty {}
+
   //The beer array and all the factory functionality returned inside an object.
 
   //fetching all beers from server API
+
   beerFactory.getBeers = function(){
     return $http.get('/beers')//returns promise
         //if success
@@ -24,8 +26,8 @@ app.factory('beerFactory', function($http, $rootScope){
     console.log(newBeer);
 
     return $http.post('/beers', newBeer)
-         .then(function(response){
-         console.log("Im response of addToList");
+      .then(function(response){
+      console.log("Im response of addToList");
 
          //client
          beerFactory.beers.push(response.data);
@@ -47,17 +49,30 @@ app.factory('beerFactory', function($http, $rootScope){
         });  
   };
   
-  beerFactory.editedBeer = function(id, editedBeer){
+  // beerFactory.editItem = function(id,newBeer){
+  //   return $http.put('/beers/' + id, newBeer).then(function(response){
+  //     console.log("Im response of editItem");
+
+  //   //client - invoke getbeers that update the view
+  //       beerFactory.getBeers(); 
+  //     },
+  //       function(err){
+  //         console.error(err);
+  //   });  
+  // };
+
+  beerFactory.saveBeer = function(id, updatedBeer){
     console.log(id);
-    console.log(editedBeer);
+    console.log(updatedBeer);
     console.log("Ive pressed the save button! yeahy")
 
-    return $http.put('/beers/' + id, editedBeer).then(function(response){
+    return $http.put('/beers/' + id, updatedBeer).then(function(response){
       console.log("Im response of editItem");
 
       //client
-      beerFactory.getBeers(); //invoke getbeers that update the view
-      this.editable = false; //toggle back with edit once data saved and sent to server
+    
+      beerFactory.getBeers(); 
+      this.editable = false; //toggle back to edit once data saved and sent to server
 
       },
         function(err){

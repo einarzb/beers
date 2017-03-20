@@ -1,7 +1,8 @@
 app.controller('mainController', function($scope, beerFactory) {
 //initializing  
   $scope.editable = false; //hides input fields 
-  var beerCopy = this.copy; //current beer that we're editing
+  //current beer that we're editing
+  var beerCopy = this.copy;
 
 //server beer array
   $scope.beers = beerFactory.beers;
@@ -21,7 +22,7 @@ app.controller('mainController', function($scope, beerFactory) {
   };
 
 //invoke service function to send the new edited object onto array
-  $scope.editedBeer = beerFactory.editedBeer;
+  $scope.saveBeer = beerFactory.saveBeer;
 
     beerFactory.getBeers();
 

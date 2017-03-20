@@ -26,7 +26,7 @@ app.get('/beers', function (req, res, next) {
             return next(error); //express next function. middleware
           } else {
             res.send(beers);
-            console.log(beers);
+            // console.log(beers);
           }
      });
 });
@@ -73,9 +73,12 @@ app.delete('/beers/:id', function(req, res, next){ //id is placeholder for 58c52
 //update 
 app.put('/beers/:id', function(req, res, next){
   //beer before change
-  Beer.find({_id: req.params.id}).exec(function(err, beer){
-  });
+  // Beer.find({_id: req.params.id}).exec(function(err, beer){
+  // });
   //beer after edit
+
+  //throw new Error("heeeelllp")
+
   Beer.findOneAndUpdate({_id: req.params.id}, req.body, {new:true}).exec(function( err, beer){ //pass 3 things: id, req.body, boolean and func
      if(err){
       console.error(err);
@@ -90,6 +93,16 @@ app.use(function(req, res, next){
   var err = new Error('Not found');
   err.status = 404;
   next(err);
+});
+
+// main error handler
+// warning - not for use in production code!
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.send({
+    message: err.message,
+    error: err
+  });
 });
 
 app.listen(8000, function() {
