@@ -22,13 +22,15 @@ app.factory('beerFactory', function($http, $rootScope){
   }; 
 
   beerFactory.addToList = function(newBeer){
+    console.log('here in the factory')
+    console.log(newBeer);
+
     return $http.post('/beers', newBeer)
       .then(function(response){
       console.log("Im response of addToList");
 
          //client
-         console.log('from the service')
-         beerFactory.beers.push(newBeer);
+         beerFactory.beers.push(response.data);
         },
         function(err){
           console.error(err);
@@ -47,8 +49,25 @@ app.factory('beerFactory', function($http, $rootScope){
         });  
   };
   
-  beerFactory.editItem = function(id,newBeer){
-    return $http.put('/beers/' + id, newBeer).then(function(response){
+  // beerFactory.editItem = function(id,newBeer){
+  //   return $http.put('/beers/' + id, newBeer).then(function(response){
+  //     console.log("Im response of editItem");
+
+  //   //client - invoke getbeers that update the view
+  //       beerFactory.getBeers(); 
+  //     },
+  //       function(err){
+  //         console.error(err);
+  //   });  
+  // };
+
+  beerFactory.editedBeer = function(id, editedBeer){
+    console.log(id);
+    console.log(editedBeer);
+    console.log("Ive pressed the save button! yeahy")
+    this.editable = false;
+
+    return $http.put('/beers/' + id, editedBeer).then(function(response){
       console.log("Im response of editItem");
 
     //client - invoke getbeers that update the view

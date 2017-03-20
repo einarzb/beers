@@ -16,7 +16,6 @@ img{
 }
 
 .beerControl{
-  border: 1px solid red;
 }
 .container-fluid{
   background: url(images/cover2.jpg) no-repeat center center fixed; 
@@ -29,7 +28,7 @@ img{
 
 .form{width: 300px;
   right: 300px;
-  background-color: rgba(187, 95, 182, 0.8);
+  background-color: rgba(187, 95, 182, 0.7);
    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
    /*#bb5fb6*/
 }

@@ -72,13 +72,16 @@ app.delete('/beers/:id', function(req, res, next){ //id is placeholder for 58c52
 
 //update 
 app.put('/beers/:id', function(req, res, next){
+  //beer before change
+  Beer.find({_id: req.params.id}).exec(function(err, beer){
+  });
+  //beer after edit
   Beer.findOneAndUpdate({_id: req.params.id}, req.body, {new:true}).exec(function( err, beer){ //pass 3 things: id, req.body, boolean and func
      if(err){
       console.error(err);
       return next (err);
     }else{
-      res.send(beer);
-    }
+      res.send(beer);}
   });
 });
 
