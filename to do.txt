@@ -11,3 +11,7 @@ to do:
 7. fix filter..
 
 8. my edit/delete doesn't work on new added beers! up until I refresh
+
+9. make rating real
+
+10. make ng-blur to toggle back to reg view if user wanna quit editing? 

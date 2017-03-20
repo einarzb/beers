@@ -46,13 +46,13 @@
                                            <b>average rating:</b> {{beer.rate | average}}
                                         </p>                           
                                 <div class="beerControl">
-                                         <input type="text" class="form-control" placeholder="beer name" ng-model="updatedBeer.name" ng-show="editable"></input>
+                                         <input type="text" class="form-control" placeholder="{{beer.name}}" ng-model="updatedBeer.name" ng-show="editable"></input>
 
-                                         <input type="text" class="form-control beerControl" placeholder="style" ng-model="updatedBeer.style" ng-show="editable"></input>
+                                         <input type="text" class="form-control beerControl" placeholder="{{beer.style}}" ng-model="updatedBeer.style" ng-show="editable"></input>
 
-                                          <input type="text" class="form-control beerControl" placeholder="abv" ng-model="updatedBeer.abv" ng-show="editable"></input>
+                                          <input type="text" class="form-control beerControl" placeholder="{{beer.abv}}" ng-model="updatedBeer.abv" ng-show="editable"></input>
 
-                                         <input type="text" class="form-control beerControl" placeholder="rate" ng-model="updatedBeer.rate" ng-show="editable"></input>
+                                         <input type="text" class="form-control beerControl" placeholder="{{beer.rate}}" ng-model="updatedBeer.rate" ng-show="editable"></input>
                                     </div>
                                </div>
 

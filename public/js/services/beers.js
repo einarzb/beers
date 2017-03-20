@@ -3,11 +3,9 @@ app.factory('beerFactory', function($http, $rootScope){
 
   var beerFactory = {beers: []}; 
   //when ill refactor it ll be an empty {}
-
   //The beer array and all the factory functionality returned inside an object.
 
   //fetching all beers from server API
-
   beerFactory.getBeers = function(){
     return $http.get('/beers')//returns promise
         //if success
@@ -26,8 +24,8 @@ app.factory('beerFactory', function($http, $rootScope){
     console.log(newBeer);
 
     return $http.post('/beers', newBeer)
-      .then(function(response){
-      console.log("Im response of addToList");
+         .then(function(response){
+         console.log("Im response of addToList");
 
          //client
          beerFactory.beers.push(response.data);
