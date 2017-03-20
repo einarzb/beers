@@ -22,8 +22,9 @@ app.factory('beerFactory', function($http, $rootScope){
   }; 
 
   beerFactory.addToList = function(newBeer){
-    return $http.post('/beers', newBeer).then(function(response){
-         console.log("Im response of addToList");
+    return $http.post('/beers', newBeer)
+      .then(function(response){
+      console.log("Im response of addToList");
 
          //client
          console.log('from the service')
@@ -47,9 +48,6 @@ app.factory('beerFactory', function($http, $rootScope){
   };
   
   beerFactory.editItem = function(id,newBeer){
-    //   if() {
-
-    // }
     return $http.put('/beers/' + id, newBeer).then(function(response){
       console.log("Im response of editItem");
 

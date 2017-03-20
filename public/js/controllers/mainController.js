@@ -1,6 +1,6 @@
 app.controller('mainController', function($scope, beerFactory) {
 
-//users input
+//initialize user input fiel
   $scope.name;
   $scope.style;
   $scope.abv;
@@ -11,6 +11,8 @@ app.controller('mainController', function($scope, beerFactory) {
   $scope.beers = beerFactory.beers;
 
 //adding beers to array
+  // $scope.addBeer = beerFactory.addBeer(newBeer);
+
   $scope.addBeer = function(newBeer) {
 
     if($scope.name && $scope.style && $scope.abv > 0){
