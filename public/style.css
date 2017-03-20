@@ -15,6 +15,9 @@ img{
   width: 250px;
 }
 
+.beerControl{
+  border: 1px solid red;
+}
 .container-fluid{
   background: url(images/cover2.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;

@@ -33,35 +33,36 @@
                     <!--users show-->
 
                     <div class="row beer-container text-left">
-                        <div class="col-md-12 col-xs-4 beer" ng-repeat="beer in beers">
-
+                        <div class="col-md-12 col-xs-4 beer" ng-hide="beerView" ng-repeat="beer in beers">
                                 <div class="col-md-4 col-xs-4 beer-section">
                                     <img ng-src="{{beer.image}}">
                                 </div>  
-
                                 <div class="col-md-8 col-xs-4 beer-section">
+                                    <div class="beerControl">
+                                         <input type="text" class="form-control" placeholder="beer name" ng-model="updatedBeer.name" ng-show="editable"></input>
+                                         <input type="text" class="form-control beerControl" placeholder="style" ng-model="updatedBeer.style" ng-show="editable"></input>
+                                          <input type="text" class="form-control beerControl" placeholder="abv" ng-model="updatedBeer.abv" ng-show="editable"></input>
+                                         <input type="text" class="form-control beerControl" placeholder="rate" ng-model="updatedBeer.rate" ng-show="editable"></input>
+                                    </div>
                                     <h4><em>{{beer.name}}</em></h4>
-                                     <input type="text" class="form-control" placeholder="Style" ng-model="nameUpdate" ng-show="editable"></input>
-
                                     <p>
-                                        <b>style:</b> {{beer.style}}
-                                         <input type="text" class="form-control" placeholder="Style" ng-model="styleUpdate" ng-show="editable"></input><br>
-
-                                        <b>abv:</b> {{beer.abv}}%</p>
-                                        <input type="text" class="form-control" placeholder="Style" ng-model="abvUpdate" ng-show="editable"></input>
-
+                                       <b>style:</b> {{beer.style}} <br>
+                                       <b>abv:</b> {{beer.abv}}%</p>
                                        <b>rating:</b> {{beer.rate[0]}}
-                                        <input type="text" class="form-control" placeholder="Style" ng-model="rateUpdate" ng-show="editable"></input>
                                        <br>
                                        <b>average rating:</b> {{beer.rate | average}}
                                </div>
-                                
+
                                 <div class="text-right">       
                                     <button type="button" ng-click="removeFromList(beer._id)"><i class="fa fa-trash" aria-hidden="true"></i>
                                     </button>
 
-                                    <button type="button" ng-click="editItem(beer._id, beer)">
+                                    <button type="button" ng-click="editItem()">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    </button>
+
+                                    <button type="button" ng-show="editable" ng-click="editedBeer(beer._id, updatedBeer)">
+                                   <i class="fa fa-floppy-o" aria-hidden="true"></i>
                                     </button>
                                </div>  
                         </div>
